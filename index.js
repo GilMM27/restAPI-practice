@@ -4,7 +4,9 @@ const app = express();
 const port = 3000;
 
 // Middleware
+app.use(express.json()); // Parse JSON bodies
 app.use(router);
+app.use(express.static('public')); // Serve static files from the src directory
 
 // Start server
 app.listen(port, () => {
